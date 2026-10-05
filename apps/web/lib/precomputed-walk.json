@@ -1,0 +1,78 @@
+{
+  "generatedBy": "laneplan_relay 1.0.0",
+  "note": "Produced by the deterministic engine, not by hand. Regenerate with scripts/generate-walk-fixture.mjs",
+  "startFacility": "NLRTM",
+  "value": {
+    "engine": "1.0.0",
+    "plans": [
+      {
+        "legs": [
+          {
+            "laneId": "rtm-fra",
+            "fromFacility": "NLRTM",
+            "toFacility": "FRAXF",
+            "departMinute": 60,
+            "arriveMinute": 560,
+            "dwellMinutes": 60
+          },
+          {
+            "laneId": "fra-str",
+            "fromFacility": "FRAXF",
+            "toFacility": "STRIG",
+            "departMinute": 620,
+            "arriveMinute": 800,
+            "dwellMinutes": 60
+          }
+        ],
+        "terminus": "STRIG",
+        "arriveMinute": 800,
+        "totalDwellMinutes": 120,
+        "laneIds": ["rtm-fra", "fra-str"]
+      },
+      {
+        "legs": [
+          {
+            "laneId": "rtm-ham",
+            "fromFacility": "NLRTM",
+            "toFacility": "DEHAM",
+            "departMinute": 45,
+            "arriveMinute": 465,
+            "dwellMinutes": 45
+          },
+          {
+            "laneId": "ham-fra",
+            "fromFacility": "DEHAM",
+            "toFacility": "FRAXF",
+            "departMinute": 555,
+            "arriveMinute": 855,
+            "dwellMinutes": 90
+          },
+          {
+            "laneId": "fra-str",
+            "fromFacility": "FRAXF",
+            "toFacility": "STRIG",
+            "departMinute": 915,
+            "arriveMinute": 1095,
+            "dwellMinutes": 60
+          }
+        ],
+        "terminus": "STRIG",
+        "arriveMinute": 1095,
+        "totalDwellMinutes": 195,
+        "laneIds": ["rtm-ham", "ham-fra", "fra-str"]
+      }
+    ],
+    "planCount": 2,
+    "legsWalked": 5,
+    "branchesPruned": 1,
+    "cycle": {
+      "laneId": "ham-rtm",
+      "facility": "NLRTM",
+      "path": ["NLRTM", "DEHAM", "NLRTM"]
+    },
+    "budget": null,
+    "windowMiss": null,
+    "maxLegs": 8,
+    "startFacility": "NLRTM"
+  }
+}

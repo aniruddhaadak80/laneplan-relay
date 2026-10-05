@@ -103,11 +103,11 @@ export class EngineBridge {
     return response.value as T
   }
 
-  async invoke(request: EngineRequest): Promise<EngineResponse> {
+  async invoke<T = unknown>(request: EngineRequest): Promise<EngineResponse<T>> {
     const started = Date.now()
     const payload = JSON.stringify(request)
 
-    return await new Promise<EngineResponse>((resolve) => {
+    return await new Promise<EngineResponse<T>>((resolve) => {
       const child = spawn(this.#options.python, [...this.#options.args], {
         cwd: this.#options.cwd,
         stdio: ['pipe', 'pipe', 'pipe'],
@@ -117,7 +117,7 @@ export class EngineBridge {
       let stderr = ''
       let settled = false
 
-      const finish = (value: EngineResponse) => {
+      const finish = (value: EngineResponse<T>) => {
         if (settled) return
         settled = true
         clearTimeout(timer)
@@ -157,7 +157,7 @@ export class EngineBridge {
           return
         }
         try {
-          finish(JSON.parse(stdout.trim()) as EngineResponse)
+          finish(JSON.parse(stdout.trim()) as EngineResponse<T>)
         } catch (cause) {
           finish({
             ok: false,

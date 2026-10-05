@@ -37,6 +37,7 @@ interface WalkResult {
   } | null
   maxLegs: number
   startFacility: string
+  engineSource?: 'live' | 'precomputed'
 }
 
 type State =
@@ -202,7 +203,15 @@ export default function WalkPanel({
           )}
 
           <p className="muted small">
-            Engine {result.engine} · deterministic: the same network always produces this exact verdict.
+            Engine {result.engine} ·{' '}
+            {result.engineSource === 'precomputed' ? (
+              <strong>
+                precomputed at build time — this host has no Python interpreter, so the engine could not run
+                here. The verdict is a stored engine result for this exact network, not a live walk.
+              </strong>
+            ) : (
+              <>run live just now · deterministic: the same network always produces this exact verdict.</>
+            )}
           </p>
         </>
       )}
