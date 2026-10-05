@@ -1,0 +1,115 @@
+/*
+ * THE SINGLE SOURCE OF COLOUR TRUTH.
+ *
+ * check:theme-tokens fails the build if a raw hex/rgb/hsl literal appears in any other
+ * file under apps/web. If you need a new colour, add it here — nowhere else. This is what
+ * stops a codebase drifting into forty slightly different greys.
+ *
+ * Identity: freight-yard signage. Slate carries the structure, amber marks the lane you are
+ * standing on, and every control is a pill because a relay console is read at a glance from
+ * across a desk. Light and dark ship from this one file.
+ */
+
+:root {
+  color-scheme: light;
+
+  /* surfaces — cool slate, the concrete of the yard */
+  --bg: #f8fafc;
+  --bg-elevated: #ffffff;
+  --bg-sunken: #eef2f6;
+
+  /* content */
+  --fg: #0f172a;
+  --fg-muted: #475569;
+  --fg-subtle: #64748b;
+
+  /* lines */
+  --border: #e2e8f0;
+  --border-strong: #cbd5e1;
+
+  /* accent — painted lane amber */
+  --accent: #b45309;
+  --accent-hover: #92400e;
+  --accent-fg: #ffffff;
+  --accent-subtle: #fef3c7;
+
+  /* status */
+  --ok: #15803d;
+  --ok-subtle: #dcfce7;
+  --warn: #b45309;
+  --warn-subtle: #fef3c7;
+  --danger: #b91c1c;
+  --danger-subtle: #fee2e2;
+  --info: #0369a1;
+  --info-subtle: #e0f2fe;
+
+  /* spacing scale — compact: this is a dense operations console */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+
+  /* radii — pill for anything you point at or read as a chip */
+  --radius-1: 999px;
+  --radius-2: 14px;
+  --radius-3: 18px;
+  --radius-4: 24px;
+
+  /* elevation */
+  --shadow-1: 0 1px 2px rgba(15, 23, 42, 0.06);
+  --shadow-2: 0 2px 8px rgba(15, 23, 42, 0.08);
+  --shadow-3: 0 8px 24px rgba(15, 23, 42, 0.12);
+
+  /* type */
+  --font-sans: 'Public Sans', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'Roboto Mono', ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace;
+  --text-xs: 0.6875rem;
+  --text-sm: 0.8125rem;
+  --text-md: 0.9375rem;
+  --text-lg: 1.0625rem;
+  --text-xl: 1.3125rem;
+  --text-2xl: 1.75rem;
+  --text-3xl: 2.25rem;
+
+  /* motion — count-up is the signature: numbers arrive, they do not slide */
+  --duration-fast: 120ms;
+  --duration-base: 200ms;
+  --ease: cubic-bezier(0.2, 0, 0.2, 1);
+}
+
+[data-theme='dark'] {
+  color-scheme: dark;
+
+  --bg: #0b1220;
+  --bg-elevated: #131c2e;
+  --bg-sunken: #070d18;
+
+  --fg: #f1f5f9;
+  --fg-muted: #94a3b8;
+  --fg-subtle: #64748b;
+
+  --border: #1e293b;
+  --border-strong: #334155;
+
+  --accent: #f59e0b;
+  --accent-hover: #fbbf24;
+  --accent-fg: #0b1220;
+  --accent-subtle: #2a1f08;
+
+  --ok: #4ade80;
+  --ok-subtle: #052e16;
+  --warn: #fbbf24;
+  --warn-subtle: #2a1f08;
+  --danger: #f87171;
+  --danger-subtle: #2a0808;
+  --info: #38bdf8;
+  --info-subtle: #082f49;
+
+  --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.5);
+  --shadow-2: 0 2px 8px rgba(0, 0, 0, 0.6);
+  --shadow-3: 0 8px 24px rgba(0, 0, 0, 0.7);
+}
