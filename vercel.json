@@ -1,9 +1,13 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "framework": "nextjs",
-  "rootDirectory": "apps/web",
-  "installCommand": "npm install --ignore-scripts",
-  "buildCommand": "npm run build --workspace=@laneplanrelay/web",
+  "services": {
+    "web": {
+      "framework": "nextjs",
+      "root": "apps/web",
+      "installCommand": "cd ../.. && npm install --ignore-scripts",
+      "buildCommand": "npm run build --workspace=@laneplanrelay/web"
+    }
+  },
   "regions": ["bom1"],
   "headers": [
     {
