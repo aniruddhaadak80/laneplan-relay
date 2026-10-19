@@ -1,0 +1,55 @@
+{
+  "facilities": [
+    { "id": "NLRTM", "name": "Rotterdam terminal", "kind": "port" },
+    { "id": "DEHAM", "name": "Hamburg cross-dock", "kind": "crossdock" },
+    { "id": "FRAXF", "name": "Frankfurt hub", "kind": "hub" },
+    { "id": "STRIG", "name": "Stuttgart last-mile", "kind": "lastmile" }
+  ],
+  "lanes": [
+    {
+      "id": "rtm-ham",
+      "fromFacility": "NLRTM",
+      "toFacility": "DEHAM",
+      "dwellMinutes": 45,
+      "transitMinutes": 420,
+      "openMinute": 0,
+      "closeMinute": 10080
+    },
+    {
+      "id": "rtm-fra",
+      "fromFacility": "NLRTM",
+      "toFacility": "FRAXF",
+      "dwellMinutes": 60,
+      "transitMinutes": 500,
+      "openMinute": 0,
+      "closeMinute": 10080
+    },
+    {
+      "id": "ham-fra",
+      "fromFacility": "DEHAM",
+      "toFacility": "FRAXF",
+      "dwellMinutes": 90,
+      "transitMinutes": 300,
+      "openMinute": 0,
+      "closeMinute": 10080
+    },
+    {
+      "id": "fra-str",
+      "fromFacility": "FRAXF",
+      "toFacility": "STRIG",
+      "dwellMinutes": 60,
+      "transitMinutes": 180,
+      "openMinute": 0,
+      "closeMinute": 10080
+    },
+    {
+      "id": "ham-rtm",
+      "fromFacility": "DEHAM",
+      "toFacility": "NLRTM",
+      "dwellMinutes": 30,
+      "transitMinutes": 420,
+      "openMinute": 0,
+      "closeMinute": 10080
+    }
+  ]
+}

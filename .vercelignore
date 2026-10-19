@@ -1,0 +1,10 @@
+# Vercel builds only the web tier from this repository.
+#
+# The Python engine is a real, tested part of the product but it is not deployed here: it is a
+# local/self-hosted surface reached by the CLI and the MCP server as a subprocess. Excluding it
+# also stops Vercel from detecting it as a second (Python) service, which would make the
+# top-level framework and build settings ambiguous.
+services/engine
+docs
+evals
+e2e
