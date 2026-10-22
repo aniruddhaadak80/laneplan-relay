@@ -5,7 +5,7 @@
       "framework": "nextjs",
       "root": "apps/web",
       "installCommand": "cd ../.. && npm install --ignore-scripts",
-      "buildCommand": "npm run build --workspace=@laneplanrelay/web"
+      "buildCommand": "npx turbo run build --filter=@laneplanrelay/web"
     }
   },
   "regions": ["bom1"],
